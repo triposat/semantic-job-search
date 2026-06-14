@@ -1,0 +1,12 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+
+data/
+
+# internal editorial artifact, not for the public repo
+BLOG_POST_REVIEW_CHECKLIST.md
