@@ -20,7 +20,7 @@ Two keys go in `.env`:
 ## Run
 
 ```bash
-python scrape.py       # fetch ~200 jobs into data/raw_jobs.json (about $0.31)
+python scrape.py       # scrape ~200 jobs into data/raw_jobs.json (about $0.31)
 python index.py        # embed and store them in LanceDB
 python search.py       # run a few demo queries
 streamlit run app.py   # optional web UI at localhost:8501
