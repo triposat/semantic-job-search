@@ -8,5 +8,7 @@ __pycache__/
 
 data/
 
-# internal editorial artifact, not for the public repo
+# local files, not part of the published code repo
+BLOG.md
+docs/
 BLOG_POST_REVIEW_CHECKLIST.md
