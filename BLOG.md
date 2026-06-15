@@ -1,6 +1,6 @@
 # Build a Semantic Job Search Engine with Bright Data, LanceDB, and Cohere
 
-*Semantic search turns a pile of LinkedIn job postings into something that answers "find me an LLM engineering role" even when no title says "LLM." This tutorial builds a working semantic job search engine over 200 real postings with Bright Data, Cohere, and LanceDB, in ~1,000 lines of Python with a built-in eval harness.*
+Job boards make you search the way a database does, by exact words, so the right role stays hidden whenever your phrasing doesn't match the posting's. Semantic search trades that literal matching for matching on meaning, which fits messy, human-written job descriptions far better. This guide builds that engine end to end over real LinkedIn postings, then measures which search approach wins instead of assuming the most complex one does.
 
 ---
 
@@ -18,11 +18,11 @@ This guide builds a semantic job search engine over 200 real LinkedIn job postin
 
 ## The problem with keyword search
 
-Naive keyword search on a job board does exactly what you ask: it returns postings whose title or description contains the literal tokens in your query. Ask for *"engineer who works on LLMs and prompt engineering"* and you'll miss roles titled *"AI Engineer"* or *"GenAI Developer"* even when they're a perfect fit. Lexical search matches characters, not meaning.
+Keyword search on a job board does exactly what you ask: it returns postings whose title or description contains the literal tokens in your query. Ask for *"engineer who works on LLMs and prompt engineering"* and you'll miss roles titled *"AI Engineer"* or *"GenAI Developer"* even when they're a perfect fit. Lexical search matches characters, not meaning.
 
-**Vector search** takes a different approach. Each job description is converted into an embedding (a high-dimensional vector that captures its semantic content), and so is your query. Similarity in vector space corresponds to similarity in meaning, regardless of the exact words used.
+**Vector search** matches on meaning instead of exact words. Each job description is converted into an embedding (a high-dimensional vector that captures its semantic content), and so is your query. A job whose vector lands close to your query's is a good match in meaning, even when it shares none of the same words.
 
-We'll build a small but complete end-to-end job search system using 3 pieces:
+Turning that into a working search engine takes 3 pieces:
 
 1. **Bright Data** scrapes 200 real LinkedIn job postings into clean structured JSON.
 2. **Cohere** turns the descriptions into embeddings and reranks the final results.
