@@ -54,7 +54,7 @@ def _table():
 @lru_cache(maxsize=1)
 def _reranker() -> CohereReranker:
     # rerank-v3.5 pinned for its price/latency profile (the v3.0 default is dated).
-    # Cohere's newer generation is rerank-v4.0: "rerank-v4.0-pro" (quality) or "rerank-v4.0-fast" (latency).
+    # Cohere also offers rerank-v4.0 ("rerank-v4.0-pro" for quality, "rerank-v4.0-fast" for latency).
     api_key = require_env("COHERE_API_KEY", "get one at https://dashboard.cohere.com/api-keys")
     return CohereReranker(model_name="rerank-v3.5", api_key=api_key)
 

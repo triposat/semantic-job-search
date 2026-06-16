@@ -1,4 +1,4 @@
-"""Bulk-fetch LinkedIn jobs from Bright Data → save raw JSON.
+"""Bulk-scrape LinkedIn jobs from Bright Data → save raw JSON.
 
 Uses the async `/trigger` endpoint with `limit_per_input` to cap spend.
 Polls until the snapshot is ready, then downloads the structured JSON.

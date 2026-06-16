@@ -1,6 +1,6 @@
 """Load raw BD jobs → embed via Cohere → upsert into LanceDB.
 
-Showcases three LanceDB features beyond basic indexing:
+Uses three LanceDB features beyond basic indexing:
 
   • `merge_insert` — upserts by `job_id` so re-runs add new jobs and refresh
     existing ones (instead of dropping and re-embedding everything).

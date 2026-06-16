@@ -1,6 +1,6 @@
 # Semantic Job Search
 
-Search LinkedIn job postings by meaning instead of exact keywords. Bright Data (scrape) → Cohere (embed + rerank) → LanceDB (hybrid vector + full-text search), all local, ~1,000 lines of Python.
+Search LinkedIn job postings by meaning instead of exact keywords. Bright Data (scrape) → Cohere (embed + rerank) → LanceDB (hybrid vector + full-text search), all local.
 
 ## Setup
 
