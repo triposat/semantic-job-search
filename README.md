@@ -1,10 +1,10 @@
 # Semantic Job Search
 
-Search LinkedIn job postings by meaning instead of exact keywords. Bright Data (scrape) → Cohere (embed + rerank) → LanceDB (hybrid vector + full-text search), all local.
+Search LinkedIn job postings by meaning instead of exact keywords. It scrapes with Bright Data, embeds and reranks with Cohere, and runs hybrid search (vector + full-text) locally with LanceDB.
 
 ## Setup
 
-Needs Python 3.10 or newer.
+You need Python 3.10 or newer.
 
 ```bash
 python -m venv .venv && source .venv/bin/activate
@@ -14,8 +14,8 @@ cp .env.example .env   # then add your two API keys
 
 Two keys go in `.env`:
 
-- `BRIGHTDATA_API_TOKEN` from brightdata.com. Enable the *LinkedIn → Job listings → Discover by keyword* scraper in the Web Scrapers Library first, or `scrape.py` fails with a 401/403.
-- `COHERE_API_KEY` from dashboard.cohere.com. A free trial key is fine. It caps at 10 calls/min, so `eval.py` backs off partway through and takes about 90s instead of 15s.
+- Get `BRIGHTDATA_API_TOKEN` from brightdata.com. Enable the *LinkedIn → Job listings → Discover by keyword* scraper in the Web Scrapers Library first, or `scrape.py` fails with a 401/403.
+- Get `COHERE_API_KEY` from dashboard.cohere.com. A free trial key is fine. It caps at 10 calls/min, so `eval.py` backs off partway through and takes about 90s instead of 15s.
 
 ## Run
 
@@ -51,7 +51,7 @@ python eval.py
 
 ## Cost
 
-The whole demo runs about $0.34: ~$0.31 to scrape 200 jobs, ~$0.02 to embed, ~$0.01 to rerank. LanceDB is free.
+The whole demo costs about $0.34. That's ~$0.31 to scrape 200 jobs, ~$0.02 to embed, and ~$0.01 to rerank. LanceDB is free.
 
 ## License
 
