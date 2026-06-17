@@ -14,7 +14,7 @@ cp .env.example .env   # then add your two API keys
 
 Two keys go in `.env`:
 
-- Get `BRIGHTDATA_API_TOKEN` from brightdata.com. Enable the *LinkedIn → Job listings → Discover by keyword* scraper in the Web Scrapers Library first, or `scrape.py` fails with a 401/403.
+- Get `BRIGHTDATA_API_TOKEN` from brightdata.com. `scrape.py` already points to Bright Data's *LinkedIn → Job listings → Discover by keyword* scraper, so a valid token is all you need.
 - Get `COHERE_API_KEY` from dashboard.cohere.com. A free trial key is fine. It caps at 10 calls/min, so `eval.py` backs off partway through and takes about 90s instead of 15s.
 
 ## Run
